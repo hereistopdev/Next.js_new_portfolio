@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin {
+  animation: spin 2s linear infinite;
+}
+html {
+  scroll-behavior: smooth !important;
+
+}
+html::-webkit-scrollbar{
+  background-color: transparent;
+  width: 0.3rem;
+  padding: 10px 0;
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  background-color: rgb(201, 198, 198);
+}
+
+.carousel .slider-wrapper.axis-vertical {
+  height: 10rem !important;
+}
+
+@font-face {
+  font-family: "CorpSansRd Cnd";
+  src: url("/fonts/CorpsansRd/CorpSansRd-BoldCnd.woff2") format("woff2"),
+    url("/fonts/CorpsansRd/CorpSansRd-BoldCnd.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CorpSansRd Cnd";
+  src: url("/fonts/CorpsansRd/CorpSansRd-BoldCndIt.woff2") format("woff2"),
+    url("/fonts/CorpsansRd/CorpSansRd-BoldCndIt.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CorpSansRd Cnd";
+  src: url("/fonts/CorpsansRd/CorpSansRd-RegularCnd.woff2") format("woff2"),
+    url("/fonts/CorpsansRd/CorpSansRd-RegularCnd.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CorpSansRd Cnd";
+  src: url("/fonts/CorpsansRd/CorpSansRd-RegularCndIt.woff2") format("woff2"),
+    url("/fonts/CorpsansRd/CorpSansRd-RegularCndIt.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CorpSansRd Cnd";
+  src: url("/fonts/CorpsansRd/CorpSansRd-MediumCnd.woff2") format("woff2"),
+    url("/fonts/CorpsansRd/CorpSansRd-MediumCnd.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CorpSansRd Cnd";
+  src: url("/fonts/CorpsansRd/CorpSansRd-MediumCndIt.woff2") format("woff2"),
+    url("/fonts/CorpsansRd/CorpSansRd-MediumCndIt.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BlackBones";
+  src: url("/fonts/BlackBones/BlackBones.eot");
+  src: url("/fonts/BlackBones/BlackBones.woff2") format("woff2"),
+    url("/fonts/BlackBones/BlackBones.woff") format("woff");
+  font-display: swap;
+}
+
+body {
+  background: rgb(23, 26, 35);
+}
+* {
+  font-family: "CorpSansRd Cnd", sans-serif;
+}
+input,
+textarea {
+  color: white !important;
+}
+
+.black_bones_font {
+  font-family: "BlackBones", sans-serif;
+}
+
+.greeting {
+  font-family: "BlackBones", sans-serif !important;
+}
