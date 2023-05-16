@@ -37,7 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Mehmet Emin</title>
+        <title>Bryan Portfolio</title>
       </Head>
       <Snowfall
         style={{
@@ -62,17 +62,7 @@ export default function App({ Component, pageProps }: AppProps) {
       ) : (
         <>
           <div className="min-h-screen relative overflow-x-hidden">
-            {/* <img
-              id="animated-div"
-              src={shape1.src}
-              className="md:w-28 hover:scale-125 duration-300 transition-transform w-16 absolute top-[8%] left-[8%]"
-            /> */}
-            <img
-              id="animated-div"
-              src={shape4.src}
-              className="absolute w-28 top-[48rem]  left-[5%]"
-              />
-            <div className=" max-w-[90rem] mx-auto px-5 xl:px-32">
+         <div className=" max-w-[90rem] mx-auto px-5 xl:px-32">
               <Navigation />
               <Component {...pageProps} />
             </div>

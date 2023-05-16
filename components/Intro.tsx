@@ -49,14 +49,46 @@ const Intro = () => {
     }
     }, []);
 
+
+    useEffect(() => {
+        let animatedDivs: HTMLDivElement[] = document.querySelectorAll("#animated-division")! as any;
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        let x = 0;
+        let y = 0;
+
+        document.addEventListener("mousemove", function (event) {
+            x = event.clientX;
+            y = event.clientY;
+
+            animatedDivs.forEach((animatedDiv) => {
+                const ratioX = x / width;
+                const ratioY = y / height;
+                const dx = ratioX * 20;
+                const dy = ratioY * 20;
+                const divWidth = animatedDiv.clientWidth;
+                const divHeight = animatedDiv.clientHeight;
+
+                // check the div won't go out of the screen
+                if (dx < 0 || dx > 100 - (divWidth / width) * 100) return;
+
+                animatedDiv.style.transform = `translate(-${dx}%, ${dy}%)`;
+            });
+        });
+
+    return () => {
+      document.removeEventListener("mousemove", () => {});
+    }
+    }, []);
+
     return (
         <div className='flex pt-[15rem] relative flex-col md:items-start items-center gap-3'>
-            {/* <img
+            <img
                 id='animated-div'
                 src={shape4.src}
                 className='absolute w-28 -z-10 -bottom-14 -left-5'
                 alt=''
-            /> */}
+            />
             <img
                 id='animated-div'
                 src={shape5.src}
@@ -64,7 +96,7 @@ const Intro = () => {
                 alt=''
             />
             <img
-                id='animated-div'
+                id='animated-division'
                 src={shape6.src}
                 className='absolute hover:scale-110 z-40 w-16 sm:w-32 md:bottom-[-24rem] bottom-[-15rem] right-[22rem] '
                 alt=''
@@ -73,12 +105,12 @@ const Intro = () => {
                 <img src={shape7.src} className='w-12' alt='' />
             </div>
             <img
-                id='animated-div'
+                id='animated-division'
                 src={shape1.src}
                 className='md:w-28 hover:scale-125 w-16 absolute top-[7rem] left-12'
             />
             <img
-                id='animated-div'
+                id='animated-division'
                 src={shape2.src}
                 className='w-14 absolute hover:scale-125 top-[5rem] sm:left-[36rem]'
             />
@@ -113,9 +145,9 @@ const Intro = () => {
             </div>
             <div className='flex gap-3 flex-col'>
                 <div className='text-white text-5xl text-center font-bold'>
-                       I`m  Necati Mert
+                       I`m  Bryan Jin
                 </div>
-                <div className='text-[rgb(54,91,254)] text-2xl'>Front & Desktop Developer</div>
+                <div className='text-[rgb(54,91,254)] text-2xl'>Senior Front-end Developer</div>
                 <div className='text-gray-300 md:max-w-[35rem]  md:text-left text-center font-light text-xl leading-8'>
                     Specialized in front-end development but also like trying out other{" "}
                     <br />

@@ -1,4 +1,5 @@
-import { GitHub, Instagram, LinkedIn, Twitter } from "@mui/icons-material";
+import { GitHub, LinkedIn } from "@mui/icons-material";
+import SendIcon from '@mui/icons-material/Send';
 import {
   alpha,
   Button,
@@ -47,7 +48,7 @@ const RedditTextField = styled((props: TextFieldProps) => (
   },
 }));
 const Contact = () => {
-  const [copied, copy, setCopied] = useCopy("mertclashof2@gmail.com");
+  const [copied, copy, setCopied] = useCopy("hereis.topdev@gmail.com");
   const copyText = () => {
     copy();
     setTimeout(() => {
@@ -59,19 +60,19 @@ const Contact = () => {
   const contacts = [
     {
       provider: "Github",
-      link: "github.com/mertkaan33",
+      link: "https://github.com/mastercodercat",
     },
     {
-      provider: "Twitter",
-      link: "twitter.com/muhammed",
+      provider: "LinkedIn",
+      link: "https://linkedin.com/in/BryanJin",
     },
     {
-      provider: "Instagram",
-      link: "instagram.com/necatimert33",
+      provider: "Skype",
+      link: "live:.cid.a915b6f66b36fe9",
     },
     {
       provider: "Discord",
-      link: "BraveMert#0001",
+      link: "bryanjin#8288",
     },
   ];
   const validate = (values: any): { name: string; error: string }[] => {
@@ -225,16 +226,16 @@ const Contact = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2">
               {contacts.map((contact, index) => (
                 <a
-                  href=""
+                  href={contact.link}
                   className="flex w-full h-fit rounded-lg hover:bg-[rgb(23,26,35)] duration-500 transition-all px-3 py-5 text-white items-start gap-3"
                   key={index}
                 >
                   {contact.provider === "Github" ? (
                     <GitHub sx={{ fontSize: 40 }} />
-                  ) : contact.provider === "Twitter" ? (
-                    <Twitter sx={{ fontSize: 40 }} />
-                  ) : contact.provider === "Instagram" ? (
-                    <Instagram sx={{ fontSize: 40 }} />
+                  ) : contact.provider === "LinkedIn" ? (
+                    <LinkedIn sx={{ fontSize: 40 }} />
+                  ) : contact.provider === "Skype" ? (
+                    <SendIcon sx={{ fontSize: 40 }} />
                   ) : contact.provider === "Linkedin" ? (
                     <LinkedIn sx={{ fontSize: 40 }} />
                   ) : contact.provider === "Behance" ? (
@@ -267,7 +268,7 @@ const Contact = () => {
                 <img src={Copy.src} className="w-7" />
               </div>
               <div className="text-center w-full font-bold text-lg">
-                {copied ? "copied" : "mertclashof2@gmail.com"}
+                {copied ? "copied" : "hereis.topdev@gmail.com"}
               </div>
             </div>
           </div>

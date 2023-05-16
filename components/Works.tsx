@@ -1,5 +1,7 @@
-import work1 from "@/assets/portfolio.png";
-import work2 from "@/assets/0002.webp";
+import work1 from "@/assets/work1.png";
+import work2 from "@/assets/work2.png";
+import work3 from "@/assets/work3.png";
+import work4 from "@/assets/work4.png";
 import { Button } from "@mui/material";
 import { NextPage } from "next";
 import Link from "next/link";
@@ -8,11 +10,20 @@ const WorksComponent: NextPage<{ works?: any[]; sent: boolean }> = ({
   sent,
   works = [
     {
-      year: 2020,
-      name: "Minecraft Platform",
+      year: 2017,
+      name: "igoods",
       work: "front-end developer",
-      desc: "Riva Network",
+      desc: "igoods",
       cover: work1.src,
+      link: "https://www.i-goods.co.jp/"
+    },
+    {
+      year: 2019,
+      name: "HELLO MOBILITY",
+      work: "front-end developer",
+      desc: "hello mobility",
+      cover: work2.src,
+      link: "https://www.hellomobility.jp/"
     },
   ],
 }) => {
@@ -26,7 +37,7 @@ const WorksComponent: NextPage<{ works?: any[]; sent: boolean }> = ({
         <div className="w-full items-center gap-0 justify-center xl:gap-[10rem] flex">
           {works.map((work, index) => (
             <Link
-            href="/"
+            href={work.link}
               key={index}
               className={`bg-[rgb(33,39,55)] group relative xl:h-[22rem] sm:h-[35vw] p-10 rounded-tl-[30px] rounded-br-[30px] max-w-auto  max-w-[35rem] sm:w-[45vw] ${index % 2 !== 0 ? "hover:bg-[#009971]" : "hover:bg-[#4445A1]"}`}
             >
