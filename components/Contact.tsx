@@ -1,4 +1,4 @@
-import { GitHub, LinkedIn } from "@mui/icons-material";
+import { GitHub, Telegram } from "@mui/icons-material";
 import SendIcon from '@mui/icons-material/Send';
 import {
   alpha,
@@ -63,8 +63,8 @@ const Contact = () => {
       link: "https://github.com/mastercodercat",
     },
     {
-      provider: "LinkedIn",
-      link: "https://linkedin.com/in/BryanJin",
+      provider: "Telegram",
+      link: "https://t.me/software730",
     },
     {
       provider: "Skype",
@@ -232,12 +232,12 @@ const Contact = () => {
                 >
                   {contact.provider === "Github" ? (
                     <GitHub sx={{ fontSize: 40 }} />
-                  ) : contact.provider === "LinkedIn" ? (
-                    <LinkedIn sx={{ fontSize: 40 }} />
+                  ) : contact.provider === "Telegram" ? (
+                    <Telegram sx={{ fontSize: 40 }} />
                   ) : contact.provider === "Skype" ? (
                     <SendIcon sx={{ fontSize: 40 }} />
-                  ) : contact.provider === "Linkedin" ? (
-                    <LinkedIn sx={{ fontSize: 40 }} />
+                  ) : contact.provider === "Telegram" ? (
+                    <Telegram sx={{ fontSize: 40 }} />
                   ) : contact.provider === "Behance" ? (
                     <img src={Behance.src} className="w-10" />
                   ) : (
